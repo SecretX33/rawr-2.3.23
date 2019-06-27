@@ -1186,17 +1186,13 @@ namespace Rawr.DPSDK
 
         public Stats GetTalentStats(DeathKnightTalents talents, Character c)
         {
-            // TODO: THis will eventually be in the common area.
-            Stats TalentStats = new Stats();
-
-            AccumulateTalents(TalentStats, c);
-
-            return TalentStats;
+            return AccumulateTalents(c);
         }
 
         /// <summary>Build the talent special effects.</summary>
-        private void AccumulateTalents(Stats FullCharacterStats, Character character)
+        private Stats AccumulateTalents(Character character)
         {
+            Stats FullCharacterStats = new Stats();
             Stats newStats = new Stats();
             float fDamageDone = 0f;
 
@@ -1823,7 +1819,7 @@ namespace Rawr.DPSDK
 
             #endregion
 
-            //            return sReturn;
+            return FullCharacterStats;
         }
 
         #region Custom Charts

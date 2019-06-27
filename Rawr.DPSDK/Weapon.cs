@@ -16,7 +16,7 @@ namespace Rawr.DPSDK {
                 i.MaxDamage = 0;
             }
 
-            effectiveExpertise = expertise + (float)(talents.TundraStalker + talents.RageOfRivendare) + 2f * (float)(talents.VeteranOfTheThirdWar);
+            effectiveExpertise = expertise;
             float fightDuration = calcOpts.FightLength * 60;
 
             if (i == null) { return; }

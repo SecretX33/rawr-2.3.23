@@ -224,7 +224,11 @@ namespace Rawr.DPSDK
                     OHExpertise += 3f;
                 }
             }
-
+            if((talents.TundraStalker + talents.RageOfRivendare + talents.VeteranOfTheThirdWar) >0)
+            {
+                if(character.MainHand != null) MHExpertise += (float)(talents.TundraStalker + talents.RageOfRivendare) + 2f * (float)(talents.VeteranOfTheThirdWar);
+                if (character.OffHand != null) OHExpertise += (float)(talents.TundraStalker + talents.RageOfRivendare) + 2f * (float)(talents.VeteranOfTheThirdWar);
+            }
 
             MH = new Weapon(null, stats, calcOpts, talents, 0f);
             OH = new Weapon(null, null, null, talents, 0f);
