@@ -1,2 +1,5 @@
 # rawr-2.3.23
-Fixed version of Rawr 2.3.23, read readme for the list of fixed bugs 
+
+## Fixes
+
+- Tentatively fixed the issue involving DPS DK didn't receiving expertise from talents.
