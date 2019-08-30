@@ -333,13 +333,13 @@ namespace Rawr
 		public XmlDocument DownloadCharacterTalentTree(string characterName, CharacterRegion region, string realm)
 		{
 			//http://{0}.wowarmory.com/character-talents.xml?r={1}&cn={2}
-			string domain = _domains[region];
-			XmlDocument doc = null;
-			if (!String.IsNullOrEmpty(characterName))
+			//string domain = _domains[region];
+		    XmlDocument doc = null;
+			/*if (!String.IsNullOrEmpty(characterName))
 			{
                 doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterTalentURI,
 													domain, realm, characterName));
-			}
+			}*/
 			return doc;
 		}
 
@@ -685,7 +685,7 @@ namespace Rawr
 						{
 							try
 							{
-								client.DownloadFile(URI, localPath);
+								client.DownloadFile("", localPath);
                                 if(!client.ResponseHeaders[HttpResponseHeader.ContentType].StartsWith(contentType))
                                 {
                                     throw new Exception("Invalid Content Type or Address Invalid.");
@@ -736,7 +736,7 @@ namespace Rawr
 
 		public string DownloadText(string URI)
 		{
-			WebClient webClient = CreateWebClient();
+			/*WebClient webClient = CreateWebClient();
 			string value = null;
 			int retry = 0;
 			bool success = false;
@@ -758,14 +758,14 @@ namespace Rawr
 					}
 				}
 				retry++;
-			} while (retry <= RETRY_MAX && !success && !LastWasFatalError);
-			return value;
+			} while (retry <= RETRY_MAX && !success && !LastWasFatalError);*/
+			return null;
 		}
 
 		private XmlDocument DownloadXml(string URI) { return DownloadXml(URI, false, false); }
 		private XmlDocument DownloadXml(string URI, bool allowTable, bool isHtml)
 		{
-			XmlDocument returnDocument = null;
+			/*XmlDocument returnDocument = null;
             int retry = 0;
             //Download Text has retry logic in it as well, but that just makes sure it gets a response, this
             //makes sure we get a valid XML response.
@@ -793,7 +793,7 @@ namespace Rawr
                         }
                         if (returnDocument == null || returnDocument.DocumentElement == null
                                     || !returnDocument.DocumentElement.HasChildNodes
-                                    /*|| !returnDocument.DocumentElement.ChildNodes[0].HasChildNodes*/) // this check is no longer valid
+                                    //|| !returnDocument.DocumentElement.ChildNodes[0].HasChildNodes) // this check is no longer valid
                         {
                             //document returned no data we care about.
                             returnDocument = null;
@@ -805,9 +805,9 @@ namespace Rawr
                     }
                 }
                 retry++;
-            } while (returnDocument == null && !LastWasFatalError && retry < RETRY_MAX);
+            } while (returnDocument == null && !LastWasFatalError && retry < RETRY_MAX);*/
 
-			return returnDocument;
+			return null;
 		}
 
         public string GetNameFromArmory(int id, string site)

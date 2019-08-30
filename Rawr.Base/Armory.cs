@@ -318,7 +318,7 @@ namespace Rawr
 		/// <param name="name">The character's Name</param>
 		/// <returns>The list of Hunter Pets in form of List(ArmoryPet)</returns>
 		public static List<ArmoryPet> GetPet(CharacterRegion region, string realm, string name) {
-			XmlDocument docTalents = null;
+			/*XmlDocument docTalents = null;
 			List<ArmoryPet> ArmoryPets = new List<ArmoryPet>() { };
 			try {
 				WebRequestWrapper wrw = new WebRequestWrapper();
@@ -348,7 +348,7 @@ namespace Rawr
 					"GetPet(...)",
 					"No Additional Info",
 					ex.StackTrace);
-			}
+			}*/
 			return null;
 		}
 
